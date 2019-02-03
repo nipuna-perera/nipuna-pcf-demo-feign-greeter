@@ -37,7 +37,7 @@ public class GreeterApplication {
     @RequestMapping(value = "/hello", method = GET)
     public String hello(@RequestParam(value="salutation", defaultValue="Hello") String salutation, @RequestParam(value="name", defaultValue="Bob") String name) {
       Greeting greeting =  messagesClient.greeting(name, salutation);
-      return greeting.getMessage();
+      return greeting.getMessage() + " welcome to Fidelity Investments";
     }
 
     public static void main(String[] args) {
