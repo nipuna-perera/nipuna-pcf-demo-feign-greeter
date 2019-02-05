@@ -42,11 +42,11 @@ public class GreeterApplication {
     @RequestMapping(value = "/hello", method = GET)
     public String hello(@RequestParam(value="salutation", defaultValue="Hello") String salutation, 
                         @RequestParam(value="name", defaultValue="Bob") String name,
-                        @RequestParam(value="instance") boolean showInstance) {
+                        @RequestParam(value="instance", required=false) boolean showInstance) {
       Greeting greeting =  messagesClient.greeting(name, salutation);
 
       if(showInstance){
-          return greeting.getMessage() + " from instance = " + instance_id;
+          return greeting.getMessage() + " from instance = " + instance_id + " hello world ";
       }
       return greeting.getMessage();
     }
