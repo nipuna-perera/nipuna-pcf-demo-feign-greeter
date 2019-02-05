@@ -4,8 +4,3 @@ spring:
       registrationMethod: route
   profiles:
     active: development
-eureka:
-  instance:
-    metadata-map:
-      applicationId: ${vcap.application.application_id}
-      instanceId: ${vcap.application.instance_index}
